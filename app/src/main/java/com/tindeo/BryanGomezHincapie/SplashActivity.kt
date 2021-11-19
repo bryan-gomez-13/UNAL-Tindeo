@@ -15,6 +15,7 @@ class SplashActivity : AppCompatActivity() {
         setContentView(binding.root)
         init()
         events()
+        // Este es un comentario de prueba
     }
 
     private fun init(){
