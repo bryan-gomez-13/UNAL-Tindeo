@@ -16,6 +16,7 @@ class SplashActivity : AppCompatActivity() {
         init()
         events()
         // Este es un comentario de prueba
+        // Segundo commit por carlos vesga
     }
 
     private fun init(){
