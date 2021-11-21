@@ -7,4 +7,10 @@
     <string name="descripcion_logo">logo de la app tindeo</string>
     <string name="text_singUp">Crear Cuenta</string>
     <string name="text_acceder">Acceder</string>
+    <string name="text_rol">Seleccione rol</string>
+    <string name="rol_text_button">Siguiente</string>
+    <string name="checkBox_text_cliente">Cliente</string>
+    <string name="checkBox_text_tienda">Tienda</string>
+    <string name="rol_radioButton_cliente">Cliente</string>
+    <string name="rol_radioButton_tienda">Tienda</string>
 </resources>
