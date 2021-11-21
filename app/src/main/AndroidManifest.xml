@@ -23,5 +23,9 @@
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Tindeo.NoActionBar"/>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 </manifest>

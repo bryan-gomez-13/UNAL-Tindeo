@@ -5,4 +5,6 @@
     <string name="login_text_field_email">Correo Electrónico</string>
     <string name="login_text_field_password">Contraseña</string>
     <string name="descripcion_logo">logo de la app tindeo</string>
+    <string name="text_singUp">Crear Cuenta</string>
+    <string name="text_acceder">Acceder</string>
 </resources>

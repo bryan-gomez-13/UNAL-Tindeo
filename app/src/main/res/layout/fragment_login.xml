@@ -4,9 +4,35 @@
     xmlns:app= "http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginFragment">
-
-    <ImageView
+    tools:context=".LoginFragment"
+    android:background="@color/white"
+    >
+    <TextView
+        android:id="@+id/text_view_tindeo"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/app_name"
+        android:fontFamily="@font/lemonada_bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:scaleType="centerCrop"
+        android:textColor="@color/teal_bold"
+        android:textSize="50sp"
+        />
+    <TextView
+        android:id="@+id/text_view_accede"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/text_acceder"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_view_tindeo"
+        android:scaleType="centerCrop"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textSizeNormal"
+        />
+<!--    <ImageView
         android:id="@+id/login_logo"
         android:layout_width="@dimen/icon_size"
         android:layout_height="@dimen/icon_size"
@@ -17,19 +43,21 @@
         android:src="@mipmap/ic_launcher_tindeo"
         android:scaleType="centerCrop"
         android:contentDescription="@string/descripcion_logo"
-        />
+        />-->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/loginTextFieldEmail"
         android:layout_width="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/login_logo"
+        app:layout_constraintTop_toTopOf="@+id/text_view_tindeo"
         app:layout_constraintBottom_toTopOf="@+id/loginTextFieldPassword"
         app:layout_constraintVertical_chainStyle="packed"
         android:layout_marginVertical="@dimen/default_margin"
         android:layout_marginHorizontal="@dimen/default_margin"
         android:layout_height="wrap_content"
-        android:hint="@string/login_text_field_email">
+        android:hint="@string/login_text_field_email"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -49,7 +77,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/default_margin"
-        android:hint="@string/login_text_field_password">
+        android:hint="@string/login_text_field_password"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -58,16 +88,34 @@
             />
 
     </com.google.android.material.textfield.TextInputLayout>
+
+
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/login_button"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/singUp_button"
+        app:layout_constraintEnd_toStartOf="@id/login_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
         android:layout_marginHorizontal="@dimen/default_margin"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/login_text_button"
+        android:text="@string/text_singUp"
+        style="?attr/materialButtonOutlinedStyle"
+        android:textSize="@dimen/textSizeMin"
 
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/default_margin"
+        android:text="@string/login_text_button"
+        app:backgroundTint="@color/orange"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/singUp_button"
+        android:textSize="@dimen/textSizeMin"
         />
 
 
