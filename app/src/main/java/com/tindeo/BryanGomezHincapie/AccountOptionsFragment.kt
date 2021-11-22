@@ -30,6 +30,7 @@ class AccountOptionsFragment : Fragment() {
         binding.RegisterRadioGroup.setOnCheckedChangeListener { group, checkedId ->
             binding.RegisterScrollCli.isVisible = binding.RegisterRolCli.isChecked
             binding.RegisterScrollStore.isVisible = binding.RegisterRolStore.isChecked
+
         }
     }
 }
