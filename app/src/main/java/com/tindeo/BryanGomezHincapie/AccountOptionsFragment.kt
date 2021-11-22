@@ -26,7 +26,6 @@ class AccountOptionsFragment : Fragment() {
     }
     override fun onStart() {
         super.onStart()
-        binding.RegisterScrollStore.isVisible = false
         binding.RegisterRadioGroup.setOnCheckedChangeListener { group, checkedId ->
             binding.RegisterScrollCli.isVisible = binding.RegisterRolCli.isChecked
             binding.RegisterScrollStore.isVisible = binding.RegisterRolStore.isChecked
