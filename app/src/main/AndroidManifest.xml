@@ -9,13 +9,15 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Tindeo.NoActionBar">
+        android:theme="@style/Theme.Tindeo">
         <activity
             android:name=".HomeActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Tindeo.NoActionBar"/>
         <activity
             android:name=".SplashActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.Tindeo.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

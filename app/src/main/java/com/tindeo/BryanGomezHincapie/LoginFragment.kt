@@ -1,5 +1,6 @@
 package com.tindeo.BryanGomezHincapie
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -25,6 +26,29 @@ class LoginFragment : Fragment() {
         super.onStart()
         binding.singUpButton.setOnClickListener{
             findNavController().navigate(R.id.action_loginFragment_to_accountOptionsFragment)
+        }
+        binding.loginButton.setOnClickListener {
+            var isValid = true
+
+            if(!binding.loginEmail.text.isValidEmail()){
+                isValid = false
+                binding.loginEmailLayout.error = "Correo electronico no valido"
+            }else{
+                binding.loginEmailLayout.error = null
+            }
+
+            if(binding.loginPassword.text.toString().length < 4){
+                isValid = false
+                binding.loginPasswordLayout.error = "Contraseña invalida"
+            }else{
+                binding.loginPasswordLayout.error = null
+            }
+
+            if(isValid){
+                //No deberia ser asi, ya que hace que haya fuerte acoplamiento
+                val intent = Intent(requireContext(),HomeActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
 }

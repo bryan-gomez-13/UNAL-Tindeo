@@ -11,7 +11,7 @@
     <item
         android:id="@+id/productFragment"
         android:enabled="true"
-        android:icon="@drawable/ic_shopping_bag_24"
+        android:icon="@drawable/ic_product_24"
         android:title="@string/menu_productos_label"
         />
 

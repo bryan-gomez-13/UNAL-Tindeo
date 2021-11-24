@@ -5,4 +5,5 @@
     <dimen name="textSizeMin">12sp</dimen>
     <dimen name="textSizeNormal">16sp</dimen>
     <dimen name="smallMargin">5dp</dimen>
+    <dimen name="small_margin">16dp</dimen>
 </resources>
