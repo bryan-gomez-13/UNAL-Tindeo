@@ -27,7 +27,7 @@
     <include layout="@layout/content_home"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appbar"
         app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
@@ -44,7 +44,6 @@
         app:menu="@menu/home_nav_graph"
         android:layout_gravity="bottom"
         app:labelVisibilityMode="labeled"
-
         />
 
 

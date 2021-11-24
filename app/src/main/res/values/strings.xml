@@ -19,6 +19,7 @@
     <string name="Register_Cli_Text_ConfirmPass">Confirmar contraseña</string>
     <string name="Register_Store_Text_NombreTienda">Nombre de la tienda</string>
     <string name="Register_Store_Text_Address">Dirección de la tienda</string>
+
     <string name="home_title">Mi tienda</string>
     <string name="product_title">Mis productos</string>
     <string name="comment_title">Opiniones de mi tienda</string>
@@ -26,6 +27,6 @@
 
     <string name="menu_tienda_label">Mi tienda</string>
     <string name="menu_productos_label">Productos</string>
-    <string name="menu_opiniones_label">Comentarios</string>
+    <string name="menu_opiniones_label">Opiniones</string>
     <string name="menu_perfil_label">Perfil</string>
 </resources>
