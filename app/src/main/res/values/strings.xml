@@ -29,4 +29,13 @@
     <string name="menu_productos_label">Productos</string>
     <string name="menu_opiniones_label">Opiniones</string>
     <string name="menu_perfil_label">Perfil</string>
+    <string name="comment_tabs_todas">Todas</string>
+    <string name="comment_tabs_positivas">Positivas</string>
+    <string name="comment_tabs_negativas">Negativas</string>
+    <string name="text_prom_rating">Promedio entre 130 opiniones</string>
+    <string name="text_star_5">5 Estrellas</string>
+    <string name="text_star_4">4 Estrellas</string>
+    <string name="text_star_3">3 Estrellas</string>
+    <string name="text_star_2">2 Estrellas</string>
+    <string name="text_star_1">1 Estrellas</string>
 </resources>

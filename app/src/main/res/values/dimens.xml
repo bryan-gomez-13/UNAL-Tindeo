@@ -6,4 +6,6 @@
     <dimen name="textSizeNormal">16sp</dimen>
     <dimen name="smallMargin">5dp</dimen>
     <dimen name="small_margin">16dp</dimen>
+    <dimen name="widthTextStar">30dp</dimen>
+    <dimen name="double_margin">32dp</dimen>
 </resources>
