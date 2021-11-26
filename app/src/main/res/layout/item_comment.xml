@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/corner_radius_card"
+
+    >
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/default_margin"
+        >
+
+        <RatingBar
+            android:id="@+id/ratingBarComment"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/default_margin"
+            android:layout_marginTop="@dimen/small_margin"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:rating="4"
+            android:stepSize="0.5" />
+
+        <TextView
+            android:id="@+id/comment_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_product_photo"
+            android:layout_marginHorizontal="@dimen/default_margin"
+            tools:text="@tools:sample/lorem"
+            android:textStyle="bold"
+            android:textAppearance="?attr/textAppearanceSubtitle1"
+            android:layout_marginTop="@dimen/small_margin"
+            />
+        <TextView
+            android:id="@+id/comment_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_product_photo"
+            tools:text="12/12/2012"
+            android:textAppearance="?attr/textAppearanceBody1"
+            android:layout_marginHorizontal="@dimen/default_margin"
+            android:layout_marginTop="@dimen/small_margin"
+            android:layout_gravity="end"
+            />
+        <TextView
+            android:id="@+id/comment_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_product_photo"
+            tools:text="Image lists are comprised of containers that are set at a certain aspect ratio. Each item in an image list can display optional text and iconography below or above the image container."
+            android:textAppearance="?attr/textAppearanceBody1"
+            android:layout_marginHorizontal="@dimen/default_margin"
+
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/default_margin"
+            android:layout_marginTop="@dimen/small_margin"
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_thumb_up_24"
+                app:tint="@color/teal" />
+            <TextView
+                android:id="@+id/comment_like"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item_product_photo"
+                android:layout_marginHorizontal="@dimen/default_margin"
+                tools:text="69"
+                android:textAppearance="?attr/textAppearanceBody1"
+
+
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_thumb_down_24"
+                app:tint="@color/teal"
+                />
+            <TextView
+                android:id="@+id/comment_dislike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item_product_photo"
+                android:layout_marginHorizontal="@dimen/default_margin"
+                tools:text="14"
+                android:textAppearance="?attr/textAppearanceBody1"
+                />
+        </LinearLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</LinearLayout>

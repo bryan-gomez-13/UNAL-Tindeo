@@ -3,12 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Cavesa/AndroidStudioProjects/UNAL-Tindeo/app/src/main/res/drawable/ic_thumb_up_24.xml" value="0.30520833333333336" />
         <entry key="..\:/Users/Cavesa/AndroidStudioProjects/UNAL-Tindeo/app/src/main/res/layout/activity_home.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/Cavesa/AndroidStudioProjects/UNAL-Tindeo/app/src/main/res/layout/fragment_account_options.xml" value="0.5" />
-        <entry key="..\:/Users/Cavesa/AndroidStudioProjects/UNAL-Tindeo/app/src/main/res/layout/fragment_comment.xml" value="0.5" />
+        <entry key="..\:/Users/Cavesa/AndroidStudioProjects/UNAL-Tindeo/app/src/main/res/layout/fragment_comment.xml" value="0.33" />
         <entry key="..\:/Users/Cavesa/AndroidStudioProjects/UNAL-Tindeo/app/src/main/res/layout/fragment_home.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/Cavesa/AndroidStudioProjects/UNAL-Tindeo/app/src/main/res/layout/fragment_login.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/Cavesa/AndroidStudioProjects/UNAL-Tindeo/app/src/main/res/layout/fragment_product.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Cavesa/AndroidStudioProjects/UNAL-Tindeo/app/src/main/res/layout/fragment_product.xml" value="0.33" />
+        <entry key="..\:/Users/Cavesa/AndroidStudioProjects/UNAL-Tindeo/app/src/main/res/layout/item_comment.xml" value="0.43700787401574803" />
+        <entry key="..\:/Users/Cavesa/AndroidStudioProjects/UNAL-Tindeo/app/src/main/res/layout/item_product.xml" value="0.5" />
       </map>
     </option>
   </component>
