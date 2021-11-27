@@ -23,7 +23,8 @@ class  HomeActivity : AppCompatActivity() {
         //Asistente de kotlin - Busca el navigarion controller por ID
         val navController = findNavController(R.id.nav_host_fragment_content_home)
         //Crear appBarconfiguration con su respectivo BAR
-        appBarConfiguration = AppBarConfiguration(navController.graph)
+        //Quitar "setOf" la flecha ya que todos lso fragmentos estan en el mismo nivel
+        appBarConfiguration = AppBarConfiguration(setOf(R.id.homeFragment, R.id.productFragment, R.id.commentFragment, R.id.profileFragment))
         //Seteo
         setupActionBarWithNavController(navController, appBarConfiguration)
         //Cual va a hacer control

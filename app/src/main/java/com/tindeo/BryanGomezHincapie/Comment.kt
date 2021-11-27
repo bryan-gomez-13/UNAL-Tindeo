@@ -9,5 +9,5 @@ data class Comment(
     var image: String,
     var like: Int,
     var unlike: Int,
-    var rating: Float,
+    var rating: Int,
 )

@@ -7,18 +7,17 @@
     tools:context=".ProductFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_margin="@dimen/default_margin"
         android:id="@+id/product_recycler"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_margin="@dimen/default_margin"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="2"
-        tools:listitem="@layout/item_product"
-        />
+        tools:listitem="@layout/item_product" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
