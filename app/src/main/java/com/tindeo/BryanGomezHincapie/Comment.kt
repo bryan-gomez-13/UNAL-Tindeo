@@ -1,5 +1,5 @@
 package com.tindeo.BryanGomezHincapie
-
+// modelo
 data class Comment(
     var id: String,
     var author: String,
