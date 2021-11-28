@@ -49,6 +49,8 @@
             android:layout_marginHorizontal="@dimen/default_margin"
             android:layout_marginTop="@dimen/small_margin"
             android:layout_gravity="end"
+            android:textSize="@dimen/textSizeMin"
+            android:textColor="#999"
             />
         <TextView
             android:id="@+id/comment_description"
@@ -71,7 +73,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_thumb_up_24"
-                app:tint="@color/teal" />
+                app:tint="@color/teal"
+                android:contentDescription="@string/imageDescriptionLike"
+                />
+
             <TextView
                 android:id="@+id/comment_like"
                 android:layout_width="wrap_content"
@@ -89,6 +94,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_thumb_down_24"
                 app:tint="@color/teal"
+                android:contentDescription="@string/imageDescriptionUnlike"
                 />
             <TextView
                 android:id="@+id/comment_dislike"

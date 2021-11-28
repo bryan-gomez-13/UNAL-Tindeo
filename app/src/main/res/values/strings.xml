@@ -38,4 +38,6 @@
     <string name="text_star_3">3 Estrellas</string>
     <string name="text_star_2">2 Estrellas</string>
     <string name="text_star_1">1 Estrellas</string>
+    <string name="imageDescriptionLike">like</string>
+    <string name="imageDescriptionUnlike">unlike</string>
 </resources>
