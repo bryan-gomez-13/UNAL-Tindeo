@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.tindeo.BryanGomezHincapie.R
 import com.tindeo.BryanGomezHincapie.ui.listeners.OnProductListener
 import com.tindeo.BryanGomezHincapie.ui.adaptares.ProductAdapter
@@ -24,7 +25,7 @@ class ProductFragment : Fragment() {
 
     private lateinit var productAdapter: ProductAdapter
     //Si queremos mostrar elementos en grid
-    private lateinit var productManager: GridLayoutManager
+    private lateinit var productManager: StaggeredGridLayoutManager
 
     private val productViewModel: ProductViewModel by sharedViewModel()
 
@@ -47,7 +48,7 @@ class ProductFragment : Fragment() {
             //Despues de la db
             listOf()
         )
-        productManager = GridLayoutManager(requireContext(),2)
+        productManager = StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL)
 
         //pasarle el listener al adaptador --- COmponente que escucha -- Patron delegation desde el adapter
         productAdapter.listener = object : OnProductListener {

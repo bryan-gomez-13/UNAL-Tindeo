@@ -4,19 +4,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.ProductFragment">
+    tools:context=".ui.fragments.ProductFragment"
+    android:background="@color/white"
+
+    >
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/product_recycler"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_margin="@dimen/default_margin"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        android:paddingTop="@dimen/default_margin"
+        app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:spanCount="2"
+        android:background="@color/white"
         tools:listitem="@layout/item_product" />
 
 

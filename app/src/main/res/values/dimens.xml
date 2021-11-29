@@ -9,5 +9,5 @@
     <dimen name="widthTextStar">30dp</dimen>
     <dimen name="double_margin">32dp</dimen>
     <dimen name="corner_radius_card">8dp</dimen>
-    <dimen name="card_elevation">8dp</dimen>
+    <dimen name="card_elevation">7dp</dimen>
 </resources>
