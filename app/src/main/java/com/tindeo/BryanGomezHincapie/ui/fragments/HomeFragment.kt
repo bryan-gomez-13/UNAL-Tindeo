@@ -1,24 +1,24 @@
-package com.tindeo.BryanGomezHincapie
+package com.tindeo.BryanGomezHincapie.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.tindeo.BryanGomezHincapie.databinding.FragmentProfileBinding
+import com.tindeo.BryanGomezHincapie.databinding.FragmentHomeBinding
 
 
-class ProfileFragment : Fragment() {
+class HomeFragment : Fragment() {
 
-    private var _binding:FragmentProfileBinding? = null
+    private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentProfileBinding.inflate(inflater,container,false)
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
-
 
 }

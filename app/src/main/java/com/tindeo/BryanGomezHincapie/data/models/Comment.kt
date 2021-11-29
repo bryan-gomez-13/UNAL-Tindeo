@@ -1,4 +1,4 @@
-package com.tindeo.BryanGomezHincapie
+package com.tindeo.BryanGomezHincapie.data.models
 // modelo
 data class Comment(
     var id: String,

@@ -1,10 +1,11 @@
-package com.tindeo.BryanGomezHincapie
+package com.tindeo.BryanGomezHincapie.ui.adaptares
 
-import android.location.GnssAntennaInfo
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.tindeo.BryanGomezHincapie.ui.listeners.OnProductListener
+import com.tindeo.BryanGomezHincapie.data.models.Product
 import com.tindeo.BryanGomezHincapie.databinding.ItemProductBinding
 
 //Recibe una lsita de productos del pollo - Hereda del recicler view del adaptar

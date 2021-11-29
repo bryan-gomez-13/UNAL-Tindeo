@@ -1,4 +1,4 @@
-package com.tindeo.BryanGomezHincapie
+package com.tindeo.BryanGomezHincapie.ui.fragments
 
 import android.os.Bundle
 import android.util.Log

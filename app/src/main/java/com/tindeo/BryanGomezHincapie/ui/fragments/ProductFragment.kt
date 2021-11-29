@@ -1,4 +1,4 @@
-package com.tindeo.BryanGomezHincapie
+package com.tindeo.BryanGomezHincapie.ui.fragments
 
 import android.os.Bundle
 import android.util.Log
@@ -7,6 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
+import com.tindeo.BryanGomezHincapie.ui.listeners.OnProductListener
+import com.tindeo.BryanGomezHincapie.ui.adaptares.ProductAdapter
+import com.tindeo.BryanGomezHincapie.data.models.Product
 import com.tindeo.BryanGomezHincapie.databinding.FragmentProductBinding
 
 
@@ -51,7 +54,7 @@ class ProductFragment : Fragment() {
         productManager = GridLayoutManager(requireContext(),2)
 
         //pasarle el listener al adaptador --- COmponente que escucha -- Patron delegation desde el adapter
-        productAdapter.listener = object : OnProductListener{
+        productAdapter.listener = object : OnProductListener {
             override fun onClick(item: Product) {
                 Log.d("PRODUCT", item.name)
             }

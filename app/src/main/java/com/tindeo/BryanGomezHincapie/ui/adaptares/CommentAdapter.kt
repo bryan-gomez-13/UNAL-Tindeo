@@ -1,9 +1,9 @@
-package com.tindeo.BryanGomezHincapie
+package com.tindeo.BryanGomezHincapie.ui.adaptares
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
+import com.tindeo.BryanGomezHincapie.data.models.Comment
 import com.tindeo.BryanGomezHincapie.databinding.ItemCommentBinding
 
 //Adapter par monstar la info

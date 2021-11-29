@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    tools:context=".HomeFragment">
+    tools:context=".ui.fragments.HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -20,6 +20,28 @@
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="@dimen/default_margin"
             android:text="Mi tienda"
+            android:textAppearance="?attr/textAppearanceSubtitle1"
+            />
+        <ImageView
+            android:id="@+id/home_match_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/home_title"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="@dimen/default_margin"
+            android:layout_marginHorizontal="@dimen/default_margin"
+            android:src="@drawable/ic_favorite_24"
+            app:tint="@color/teal"
+            />
+        <TextView
+            android:id="@+id/home_match_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5"
+            app:layout_constraintStart_toEndOf="@+id/home_match_image"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="@dimen/default_margin"
+            android:layout_marginHorizontal="@dimen/smallMargin"
             android:textAppearance="?attr/textAppearanceSubtitle1"
             />
 

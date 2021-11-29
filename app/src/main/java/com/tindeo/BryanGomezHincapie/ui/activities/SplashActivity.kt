@@ -1,4 +1,4 @@
-package com.tindeo.BryanGomezHincapie
+package com.tindeo.BryanGomezHincapie.ui.activities
 
 import android.animation.Animator
 import android.content.Intent

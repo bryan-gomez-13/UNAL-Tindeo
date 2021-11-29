@@ -1,4 +1,4 @@
-package com.tindeo.BryanGomezHincapie
+package com.tindeo.BryanGomezHincapie.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

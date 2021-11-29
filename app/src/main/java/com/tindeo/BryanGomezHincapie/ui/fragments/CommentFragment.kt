@@ -1,4 +1,4 @@
-package com.tindeo.BryanGomezHincapie
+package com.tindeo.BryanGomezHincapie.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.tindeo.BryanGomezHincapie.ui.adaptares.CommentAdapter
+import com.tindeo.BryanGomezHincapie.data.models.Comment
 import com.tindeo.BryanGomezHincapie.databinding.FragmentCommentBinding
 
 

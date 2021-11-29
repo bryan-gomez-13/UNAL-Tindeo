@@ -11,15 +11,17 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Tindeo">
+        android:theme="@style/Theme.Tindeo"
+        android:name=".App"
+        >
 
         <activity
-            android:name=".HomeActivity"
+            android:name=".ui.activities.HomeActivity"
             android:exported="false"
             android:theme="@style/Theme.Tindeo.NoActionBar"/>
 
         <activity
-            android:name=".SplashActivity"
+            android:name=".ui.activities.SplashActivity"
             android:exported="true"
             android:theme="@style/Theme.Tindeo.NoActionBar">
             <intent-filter>
@@ -30,7 +32,7 @@
         </activity>
 
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.activities.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Tindeo.NoActionBar"

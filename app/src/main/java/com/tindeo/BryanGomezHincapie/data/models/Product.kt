@@ -1,4 +1,4 @@
-package com.tindeo.BryanGomezHincapie
+package com.tindeo.BryanGomezHincapie.data.models
 //pollos jopo
 //Clase que solo tiene informacion - Getters and setter
 data class Product(

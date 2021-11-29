@@ -1,4 +1,4 @@
-package com.tindeo.BryanGomezHincapie
+package com.tindeo.BryanGomezHincapie.ui.fragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.tindeo.BryanGomezHincapie.ui.activities.HomeActivity
+import com.tindeo.BryanGomezHincapie.R
 import com.tindeo.BryanGomezHincapie.databinding.FragmentLoginBinding
 
 
@@ -46,7 +48,7 @@ class LoginFragment : Fragment() {
             */
             if(isValid){
                 //No deberia ser asi, ya que hace que haya fuerte acoplamiento
-                val intent = Intent(requireContext(),HomeActivity::class.java)
+                val intent = Intent(requireContext(), HomeActivity::class.java)
                 startActivity(intent)
             }
         }

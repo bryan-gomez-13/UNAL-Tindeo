@@ -1,4 +1,4 @@
-package com.tindeo.BryanGomezHincapie
+package com.tindeo.BryanGomezHincapie.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,6 +7,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.tindeo.BryanGomezHincapie.R
 import com.tindeo.BryanGomezHincapie.databinding.ActivityHomeBinding
 
 class  HomeActivity : AppCompatActivity() {
@@ -24,7 +25,12 @@ class  HomeActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_home)
         //Crear appBarconfiguration con su respectivo BAR
         //Quitar "setOf" la flecha ya que todos lso fragmentos estan en el mismo nivel
-        appBarConfiguration = AppBarConfiguration(setOf(R.id.homeFragment, R.id.productFragment, R.id.commentFragment, R.id.profileFragment))
+        appBarConfiguration = AppBarConfiguration(setOf(
+            R.id.homeFragment,
+            R.id.productFragment,
+            R.id.commentFragment,
+            R.id.profileFragment
+        ))
         //Seteo
         setupActionBarWithNavController(navController, appBarConfiguration)
         //Cual va a hacer control
