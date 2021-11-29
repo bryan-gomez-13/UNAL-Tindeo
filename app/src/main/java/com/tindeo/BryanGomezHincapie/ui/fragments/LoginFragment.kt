@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.tindeo.BryanGomezHincapie.ui.activities.HomeActivity
 import com.tindeo.BryanGomezHincapie.R
 import com.tindeo.BryanGomezHincapie.databinding.FragmentLoginBinding
+import com.tindeo.BryanGomezHincapie.isValidEmail
 
 
 class LoginFragment : Fragment() {

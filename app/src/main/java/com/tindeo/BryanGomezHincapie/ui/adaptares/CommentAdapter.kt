@@ -31,4 +31,11 @@ class CommentAdapter(var items: List<Comment>): RecyclerView.Adapter<CommentAdap
     override fun getItemCount(): Int {
         return items.size
     }
+
+    fun newDataSet(newComments: List<Comment>){
+        //Items cambiaron
+        items = newComments
+        // Indicar al recycler que se pinte again
+        notifyDataSetChanged()
+    }
 }

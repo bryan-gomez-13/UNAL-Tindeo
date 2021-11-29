@@ -4,13 +4,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.tindeo.BryanGomezHincapie.data.models.Comment
 import com.tindeo.BryanGomezHincapie.ui.listeners.OnProductListener
 import com.tindeo.BryanGomezHincapie.data.models.Product
 import com.tindeo.BryanGomezHincapie.databinding.ItemProductBinding
 
 //Recibe una lsita de productos del pollo - Hereda del recicler view del adaptar
 //El viewholder se crear ahi
-class ProductAdapter (val items: List<Product>):RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
+class ProductAdapter (var items: List<Product>):RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
     //Variable
     var listener: OnProductListener? = null
 
@@ -48,5 +49,12 @@ class ProductAdapter (val items: List<Product>):RecyclerView.Adapter<ProductAdap
     //Inidicar que layout -- Podemos hacer un codigo por si llega a ver 0 o 1 o mas elementos
     override fun getItemViewType(position: Int): Int {
         return super.getItemViewType(position)
+    }
+
+    fun newDataSet(newProducts: List<Product>){
+        //Items cambiaron
+        items = newProducts
+        // Indicar al recycler que se pinte again
+        notifyDataSetChanged()
     }
 }

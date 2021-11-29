@@ -9,7 +9,11 @@
         android:id="@+id/productFragment"
         android:name="com.tindeo.BryanGomezHincapie.ui.fragments.ProductFragment"
         android:label="@string/product_title"
-        tools:layout="@layout/fragment_product" />
+        tools:layout="@layout/fragment_product" >
+        <action
+            android:id="@+id/action_productFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.tindeo.BryanGomezHincapie.ui.fragments.HomeFragment"
@@ -25,4 +29,9 @@
         android:name="com.tindeo.BryanGomezHincapie.ui.fragments.CommentFragment"
         android:label="@string/comment_title"
         tools:layout="@layout/fragment_comment" />
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.tindeo.BryanGomezHincapie.ui.fragments.ProductDetailFragment"
+        android:label="@string/product_detail_title"
+        tools:layout="@layout/fragment_product_detail" />
 </navigation>
