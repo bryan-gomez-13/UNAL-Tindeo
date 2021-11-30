@@ -10,5 +10,6 @@
     <color name="teal">#A3D2CA</color>
     <color name="teal_bold">#5EAAA8</color>
     <color name="orange">#EB5E0B</color>
+    <color name="gray">#AAAAAA</color>
 
 </resources>

@@ -34,6 +34,13 @@
         <item name="cornerSizeTopLeft">50%</item>
         <item name="cornerSizeTopRight">50%</item>
     </style>
+    <style name="roundedImageHome">
+        <item name="cornerFamilyBottomLeft">rounded</item>
+        <item name="cornerFamilyBottomRight">rounded</item>
+        <item name="cornerSizeBottomLeft">10%</item>
+        <item name="cornerSizeBottomRight">10%</item>
+    </style>
+
 
     <style name="roundedCard">
         <item name="cornerFamilyTopLeft">rounded</item>

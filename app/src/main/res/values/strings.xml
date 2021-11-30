@@ -41,4 +41,8 @@
     <string name="text_star_1">1 Estrellas</string>
     <string name="imageDescriptionLike">like</string>
     <string name="imageDescriptionUnlike">unlike</string>
+    <string name="lorem_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s</string>
+    <string name="text_descripcion">Descripción</string>
+    <string name="text_label_direccion">Dirección</string>
+    <string name="imagen_de_la_tienda">Imagen de la tienda</string>
 </resources>
