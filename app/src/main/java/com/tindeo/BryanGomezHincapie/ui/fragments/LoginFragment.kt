@@ -32,7 +32,7 @@ class LoginFragment : Fragment() {
         }
         binding.loginButton.setOnClickListener {
             var isValid = true
-            /*
+
             if(!binding.loginEmail.text.isValidEmail()){
                 isValid = false
                 binding.loginEmailLayout.error = "Correo electronico no valido"
@@ -46,7 +46,7 @@ class LoginFragment : Fragment() {
             }else{
                 binding.loginPasswordLayout.error = null
             }
-            */
+
             if(isValid){
                 //No deberia ser asi, ya que hace que haya fuerte acoplamiento
                 val intent = Intent(requireContext(), HomeActivity::class.java)
