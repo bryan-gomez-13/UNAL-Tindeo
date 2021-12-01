@@ -4,57 +4,184 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.ProductDetailFragment">
+    tools:context=".ui.fragments.ProductDetailFragment"
+    android:background="@color/white"
+    >
 
-    <TextView
-        android:id="@+id/product_detail_name"
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/product_layout_image"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="@dimen/default_margin"
-        tools:text="Mi tienda"
-        android:textAppearance="?attr/textAppearanceSubtitle1"
-        android:textStyle="bold"
-        />
+        >
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/product_detail_image"
-        android:layout_width="@dimen/icon_size"
-        android:layout_height="@dimen/icon_size"
-        android:scaleType="centerCrop"
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/product_detail_image"
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/product_detail_name"
+            app:shapeAppearanceOverlay="@style/roundedImageProductDetail"
+            tools:ignore="ImageContrastCheck"
+            tools:srcCompat="@mipmap/ic_launcher" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/product_detail_name"
-        android:layout_marginTop="@dimen/small_margin"
-        tools:srcCompat="@mipmap/ic_launcher"
-        app:shapeAppearanceOverlay="@style/roundedImage"/>
+        app:layout_constraintTop_toBottomOf="@id/product_layout_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/wave"
+        >
 
-    <TextView
-        android:id="@+id/product_detail_price"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="@id/product_detail_image"
-        app:layout_constraintRight_toRightOf="@id/product_detail_image"
-        app:layout_constraintTop_toBottomOf="@id/product_detail_image"
-        android:layout_marginHorizontal="@dimen/small_margin"
-        tools:text="$10000"
-        android:layout_marginTop="@dimen/small_margin"
-        android:textAppearance="?attr/textAppearanceBody1"
-        />
+        <TextView
+            android:id="@+id/product_detail_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/layout_price_amount"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="70dp"
+            tools:text="Pecuhaga a la plancha"
+            android:textAppearance="?attr/textAppearanceSubtitle1"
+            android:textStyle="bold"
+            />
 
-    <TextView
-        android:id="@+id/product_detail_description"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/product_detail_price"
-        android:layout_marginHorizontal="@dimen/small_margin"
-        tools:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-        android:layout_marginTop="@dimen/small_margin"
-        android:textAppearance="?attr/textAppearanceBody1"
-        />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_marginTop="@dimen/default_margin"
+            android:id="@+id/layout_price_amount"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            app:layout_constraintBottom_toTopOf="@+id/product_label_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/product_detail_name"
+            android:background="@drawable/bg_price_number"
+            >
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/constraintLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="$10" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="140dp"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_cantidad"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/product_less"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_expand_more_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/layout_number"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="@string/product_disminuir"
+                    app:tint="@color/black" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_number"
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_number"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    >
+
+                    <TextView
+                        android:id="@+id/product_detail_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        tools:text="1"
+                        android:textColor="@color/black"
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <ImageView
+                    android:id="@+id/product_plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_expand_less_24"
+                    app:tint="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/layout_number"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="@string/product_aumentar_producto"
+                    />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/product_label_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin"
+            app:layout_constraintTop_toBottomOf="@id/layout_price_amount"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:text="@string/text_descripcion"
+            android:textColor="@color/orange"
+            android:layout_marginHorizontal="@dimen/small_margin"
+            />
+        <TextView
+            android:id="@+id/product_detail_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/product_label_description"
+            android:layout_marginHorizontal="@dimen/small_margin"
+            tools:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+            android:layout_marginTop="@dimen/small_margin"
+            android:textAppearance="?attr/textAppearanceBody1"
+            android:textColor="@color/gray"
+            />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_addToCar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/default_margin"
+            android:layout_marginBottom="@dimen/smallMargin"
+            android:text="@string/text_button_addToCar"
+            android:textColor="#212121"
+            android:textSize="@dimen/textSizeMin"
+            app:backgroundTint="@color/orange"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

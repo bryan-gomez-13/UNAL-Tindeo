@@ -45,4 +45,7 @@
     <string name="text_descripcion">Descripción</string>
     <string name="text_label_direccion">Dirección</string>
     <string name="imagen_de_la_tienda">Imagen de la tienda</string>
+    <string name="text_button_addToCar">Agregar al carrito</string>
+    <string name="product_disminuir">Disminuir</string>
+    <string name="product_aumentar_producto">aumentar producto</string>
 </resources>
