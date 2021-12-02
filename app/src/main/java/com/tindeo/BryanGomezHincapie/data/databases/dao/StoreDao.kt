@@ -9,12 +9,12 @@ import com.tindeo.BryanGomezHincapie.data.models.StoreInfo
 @Dao
 interface StoreDao {
     @Insert
-    suspend fun insertStore(store: List<StoreInfo>)
+    suspend fun insertStore(store: StoreInfo)
 
     @Query("SELECT * FROM stores")
     suspend fun getAllStores(): List<StoreInfo>
 
     // Traer solo una tienda
     @Query("SELECT * FROM stores LIMIT 1")
-    suspend fun getStore(): StoreInfo
+    suspend fun getStore(): StoreInfo?
 }

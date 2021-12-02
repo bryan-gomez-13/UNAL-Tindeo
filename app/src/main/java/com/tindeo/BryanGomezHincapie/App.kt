@@ -2,6 +2,7 @@ package com.tindeo.BryanGomezHincapie
 
 import android.app.Application
 import com.tindeo.BryanGomezHincapie.di.dataSourceModule
+import com.tindeo.BryanGomezHincapie.di.databaseModule
 import com.tindeo.BryanGomezHincapie.di.repoModule
 import com.tindeo.BryanGomezHincapie.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
@@ -14,10 +15,10 @@ class App: Application() {
         super.onCreate()
         // inicializar Koin, habilitacion de depencias con Koin
         startKoin{
-            // contexto general de la app
+            // contexto general de la app -- DatabaseModule
             androidContext(this@App)
             // Modulo de inyector de dependencias que usaremos, una lista de diferente modulos
-            modules(listOf(dataSourceModule, repoModule, viewModelModule))
+            modules(listOf(dataSourceModule, repoModule, viewModelModule, databaseModule))
         }
     }
 }

@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 //Clase que solo tiene informacion - Getters and setter
 @Entity(tableName = "products")
 data class Product(
-    @PrimaryKey var id: String?,
+    @PrimaryKey var id: String,
     var name: String?,
     var description: String?,
     var price: String?,

@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 // Solo sera una clase de setter and getter para retorna la info de la tienda
 @Entity(tableName = "stores")
 data class StoreInfo (
-    @PrimaryKey var id: String?,
+    @PrimaryKey var id: String,
     var name: String?,
     var image: String?,
     var address: String?,

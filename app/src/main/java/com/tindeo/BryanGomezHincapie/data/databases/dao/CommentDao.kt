@@ -9,8 +9,8 @@ import com.tindeo.BryanGomezHincapie.data.models.Comment
 @Dao
 interface CommentDao {
     // Si quiero insertar solo se le coloca esto
-    @Insert
     //Como se usan corutinas se usa suspend -- Internamente inserta
+    @Insert
     suspend fun insertComments(comments: List<Comment>)
 
     // Consultar
