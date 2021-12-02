@@ -15,6 +15,7 @@ class SplashActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySplashBinding
     //Crear repositore
     private val splashViewModel: SplashViewModel by viewModel()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //Crear layout

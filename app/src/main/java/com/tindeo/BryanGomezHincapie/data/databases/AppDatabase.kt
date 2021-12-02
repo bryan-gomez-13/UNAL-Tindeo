@@ -20,7 +20,7 @@ abstract class AppDatabase: RoomDatabase(){
     //Funciones abstractas - Cada una devuelve cada Dao
     abstract fun commentDao(): CommentDao
     abstract fun productDao(): ProductDao
-    abstract fun storeDAo(): StoreDao
+    abstract fun storeDao(): StoreDao
 
     //Singleton - Patron de diseño para tener una instancia unica - Una sola conexion
     // Crear solo una instancia

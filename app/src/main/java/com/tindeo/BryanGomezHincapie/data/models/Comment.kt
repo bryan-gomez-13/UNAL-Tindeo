@@ -9,7 +9,7 @@ import androidx.room.PrimaryKey
 // Anotaciones para Tidi - Etiquetas
 @Entity(tableName = "comments")
 data class Comment(
-    @PrimaryKey var id: String,
+    @PrimaryKey var id: String = "",
     var author: String?,
     var title: String?,
     var description: String?,

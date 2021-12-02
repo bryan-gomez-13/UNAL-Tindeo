@@ -53,7 +53,7 @@ class ProductFragment : Fragment() {
         //pasarle el listener al adaptador --- COmponente que escucha -- Patron delegation desde el adapter
         productAdapter.listener = object : OnProductListener {
             override fun onClick(item: Product) {
-                Log.d("PRODUCT", item.name)
+                Log.d("PRODUCT", item.name!!)
                 productViewModel.selectProduct(item)
                 findNavController().navigate(R.id.action_productFragment_to_productDetailFragment)
             }

@@ -11,8 +11,8 @@ interface StoreDao {
     @Insert
     suspend fun insertStore(store: StoreInfo)
 
-    @Query("SELECT * FROM stores")
-    suspend fun getAllStores(): List<StoreInfo>
+    /*@Query("SELECT * FROM stores")
+    suspend fun getAllStores(): List<StoreInfo>*/
 
     // Traer solo una tienda
     @Query("SELECT * FROM stores LIMIT 1")
