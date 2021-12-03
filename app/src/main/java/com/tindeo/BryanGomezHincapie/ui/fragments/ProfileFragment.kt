@@ -41,8 +41,9 @@ class ProfileFragment : Fragment() {
 
     private fun events() {
         binding.profileImage.setOnClickListener{
-            if (ContextCompat.checkSelfPermission(requireContext(), android.Manifest.permission.CAMERA ) == PackageManager.PERMISSION_GRANTED){
-                ActivityCompat.requestPermissions(requireActivity(), arrayOf(android.Manifest.permission.CAMERA),REQUEST_CAMERA_PERMISSION)
+            if (ContextCompat.checkSelfPermission(requireContext(), android.Manifest.permission.CAMERA )
+                == PackageManager.PERMISSION_GRANTED){
+                    //Solo si tengo los permisos lanza la actividad
                 Intent(MediaStore.ACTION_IMAGE_CAPTURE).also{ intent->
                     try{
                         startActivityForResult(intent,REQUEST_IMAGE)
@@ -55,16 +56,21 @@ class ProfileFragment : Fragment() {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        // Si resultado es correcto y el codigo de solitus request image es que ya tengo la imagen
         if (resultCode == Activity.RESULT_OK){
             if (requestCode == REQUEST_IMAGE){
+                //Convertir la imagen
                 val bitmap = data?.extras?.get("data") as Bitmap
                 binding.profileImage.setImageBitmap(bitmap)
             }
         }
     }
     private fun checkPermission () {
-        if (ContextCompat.checkSelfPermission(requireContext(), android.Manifest.permission.CAMERA ) != PackageManager.PERMISSION_GRANTED){
-            ActivityCompat.requestPermissions(requireActivity(), arrayOf(android.Manifest.permission.CAMERA),REQUEST_CAMERA_PERMISSION)
+        //Verificar permisos que si estan activa la camara y si no esta lo pide
+        if (ContextCompat.checkSelfPermission(requireContext(), android.Manifest.permission.CAMERA )
+            != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(requireActivity(), arrayOf(android.Manifest.permission.CAMERA),
+                REQUEST_CAMERA_PERMISSION)
         }
     }
 
