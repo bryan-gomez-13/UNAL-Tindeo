@@ -10,5 +10,5 @@ val repoModule = module {
     single{StoreRepository(get(), get())}
     single { ProductRepository(get(), get()) }
     single { CommentRepository(get(), get()) }
-    single { UserRepository(get()) }
+    single {UserRepository(get(), get())}
 }

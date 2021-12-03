@@ -11,6 +11,6 @@ val dataSourceModule = module{
     single {CommentMock()}
     single {ProductMock()}
     single {StoreInfoMock()}
-    // Inyecta la dependencia de firebase de autenticacion // devuelve una unica instacia de firebase
-    single {FirebaseAuth.getInstance()}
+    single { FirebaseAuth.getInstance()}
+    single { FirebaseAuth.getInstance().getReference()}
 }
