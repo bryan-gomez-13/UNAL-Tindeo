@@ -10,9 +10,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
+import com.tindeo.BryanGomezHincapie.R
 import com.tindeo.BryanGomezHincapie.databinding.FragmentProfileBinding
+import com.tindeo.BryanGomezHincapie.ui.activities.MainActivity
+import com.tindeo.BryanGomezHincapie.ui.viewmodels.LoginViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.lang.Exception
 
 
@@ -24,6 +31,7 @@ class ProfileFragment : Fragment() {
     private val REQUEST_CAMERA_PERMISSION = 1
     private val REQUEST_IMAGE = 2
 
+    private val loginViewModel: LoginViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,6 +43,7 @@ class ProfileFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
+        loginViewModel.loggedIn()
         checkPermission()
         events()
     }
@@ -53,6 +62,24 @@ class ProfileFragment : Fragment() {
                 }
             }
         }
+        binding.profileLogOut.setOnClickListener{
+            loginViewModel.logOut()
+        }
+    }
+    private fun observeViewModels(){
+        loginViewModel.user.observe(viewLifecycleOwner, Observer{ user ->
+            if(user != null){
+                binding.profileName.text = user!!.displayName
+            }else{
+                val intent = Intent(requireContext(), MainActivity::class.java)
+                startActivity(intent)
+                requireActivity().finish()
+            }
+
+        })
+        loginViewModel.error.observe(viewLifecycleOwner,Observer{error->
+            Toast.makeText(requireContext(),error, Toast.LENGTH_LONG).show()
+        })
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

@@ -66,7 +66,7 @@
         android:layout_height="0dp"
         android:fillViewport="true"
         app:layout_constraintTop_toBottomOf="@+id/Register_RadioGroup"
-        app:layout_constraintBottom_toTopOf="@id/login_button">
+        app:layout_constraintBottom_toTopOf="@id/singUp_button">
 
 
         <LinearLayout
@@ -85,6 +85,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             >
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Cli_nombre_textInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
@@ -117,6 +118,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 >
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Cli_correo_textInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
@@ -150,6 +152,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 >
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Cli_pass_textInput"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
@@ -184,7 +187,7 @@
         android:fillViewport="true"
         android:visibility="invisible"
         app:layout_constraintTop_toBottomOf="@+id/Register_RadioGroup"
-        app:layout_constraintBottom_toTopOf="@id/login_button">
+        app:layout_constraintBottom_toTopOf="@id/singUp_button">
 
         <LinearLayout
             android:layout_height="wrap_content"
@@ -202,6 +205,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 >
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Store_nombre_textInput"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
@@ -250,6 +254,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 >
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Store_email_textInput"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
@@ -299,6 +304,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 >
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Store_pass_textInput"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
@@ -328,7 +334,7 @@
     </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/login_button"
+        android:id="@+id/singUp_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/default_margin"

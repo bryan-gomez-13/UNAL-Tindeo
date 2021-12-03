@@ -4,10 +4,12 @@ import android.animation.Animator
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.lifecycle.Observer
 import com.tindeo.BryanGomezHincapie.data.models.Comment
 import com.tindeo.BryanGomezHincapie.data.models.Product
 import com.tindeo.BryanGomezHincapie.data.models.StoreInfo
 import com.tindeo.BryanGomezHincapie.databinding.ActivitySplashBinding
+import com.tindeo.BryanGomezHincapie.ui.viewmodels.LoginViewModel
 import com.tindeo.BryanGomezHincapie.ui.viewmodels.SplashViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -15,6 +17,8 @@ class SplashActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySplashBinding
     //Crear repositore
     private val splashViewModel: SplashViewModel by viewModel()
+
+    private val loginViewModel: LoginViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,6 +63,7 @@ class SplashActivity : AppCompatActivity() {
                 Product("10","Product 10","Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.","$10000", "https://cdn.pixabay.com/photo/2017/03/23/19/57/asparagus-2169305_960_720.jpg")
             )
         )
+        loginViewModel.loggedIn()
         binding.splashAnimation.playAnimation()
     }
 
@@ -69,6 +74,18 @@ class SplashActivity : AppCompatActivity() {
             }
 
             override fun onAnimationEnd(animation: Animator?) {
+                // Observando si el usuario esta logueado
+                loginViewModel.user.observe(this@SplashActivity, Observer { user ->
+                    if(user == null){
+                        val intent = Intent(applicationContext, MainActivity::class.java)
+                        startActivity(intent)
+                    }else{
+                        val intent = Intent(applicationContext, HomeActivity::class.java)
+                        startActivity(intent)
+                    }
+                    finish()
+                })
+
                 //intension explicita
                 val intent = Intent(applicationContext, MainActivity::class.java)
                 startActivity(intent)

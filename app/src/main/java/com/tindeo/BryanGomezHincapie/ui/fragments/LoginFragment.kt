@@ -6,16 +6,22 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.tindeo.BryanGomezHincapie.ui.activities.HomeActivity
 import com.tindeo.BryanGomezHincapie.R
 import com.tindeo.BryanGomezHincapie.databinding.FragmentLoginBinding
 import com.tindeo.BryanGomezHincapie.isValidEmail
+import com.tindeo.BryanGomezHincapie.ui.viewmodels.LoginViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class LoginFragment : Fragment() {
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
+
+    private val loginViewModel: LoginViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,6 +33,7 @@ class LoginFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
+        observeViewModels()
         binding.singUpButton.setOnClickListener{
             findNavController().navigate(R.id.action_loginFragment_to_accountOptionsFragment)
         }
@@ -47,11 +54,28 @@ class LoginFragment : Fragment() {
                 binding.loginPasswordLayout.error = null
             }
 
+
+
             if(isValid){
+
+                loginViewModel.login(binding.loginEmail.text.toString(),binding.loginPassword.text.toString())
+
+
+            }
+        }
+    }
+
+    private fun observeViewModels(){
+        loginViewModel.user.observe(viewLifecycleOwner, Observer{ user ->
+            if(user != null){
                 //No deberia ser asi, ya que hace que haya fuerte acoplamiento
                 val intent = Intent(requireContext(), HomeActivity::class.java)
                 startActivity(intent)
             }
-        }
+
+        })
+        loginViewModel.error.observe(viewLifecycleOwner,Observer{error->
+            Toast.makeText(requireContext(),error, Toast.LENGTH_LONG).show()
+        })
     }
 }
