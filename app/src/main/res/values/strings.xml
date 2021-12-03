@@ -48,4 +48,5 @@
     <string name="text_button_addToCar">Agregar al carrito</string>
     <string name="product_disminuir">Disminuir</string>
     <string name="product_aumentar_producto">aumentar producto</string>
+    <string name="logOut">Cerrar Sesión</string>
 </resources>
