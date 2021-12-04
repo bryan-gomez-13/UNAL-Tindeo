@@ -15,7 +15,9 @@ data class Comment(
     var description: String?,
     var data: String?,
     var image: String?,
-    var like: Int?,
-    var unlike: Int?,
-    var rating: Int?
-)
+    var like: Int? =null,
+    var unlike: Int?=null,
+    var rating: Int?=null,
+){
+    constructor(): this("","","","","","")
+}

@@ -1,6 +1,8 @@
 package com.tindeo.BryanGomezHincapie.di
 
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.FirebaseStorage
 import com.tindeo.BryanGomezHincapie.data.mocks.CommentMock
 import com.tindeo.BryanGomezHincapie.data.mocks.ProductMock
 import com.tindeo.BryanGomezHincapie.data.mocks.StoreInfoMock
@@ -12,5 +14,6 @@ val dataSourceModule = module{
     single {ProductMock()}
     single {StoreInfoMock()}
     single { FirebaseAuth.getInstance()}
-    single { FirebaseAuth.getInstance().getReference()}
+    single { FirebaseStorage.getInstance().getReference()}
+    single { FirebaseFirestore.getInstance() }
 }

@@ -53,7 +53,7 @@ class UserRepository (private val dataSource: FirebaseAuth, private val dataSour
         val profileUpdate = userProfileChangeRequest {
             photoUri = uri
         }
-        user!!.updateProfile(profileUpdate)
+        user!!.updateProfile(profileUpdate).await()
         return user
     }
 

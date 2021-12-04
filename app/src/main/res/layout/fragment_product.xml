@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragments.ProductFragment"
     android:background="@color/white"
-
+    android:transitionName="shared_container"
     >
 
     <androidx.recyclerview.widget.RecyclerView

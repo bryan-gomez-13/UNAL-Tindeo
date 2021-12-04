@@ -11,11 +11,11 @@ interface CommentDao {
     // Si quiero insertar solo se le coloca esto
     //Como se usan corutinas se usa suspend -- Internamente inserta
     @Insert
-    suspend fun insertComments(comments: List<Comment>)
+    fun insertComments(comments: List<Comment>)
 
     // Consultar
     @Query("SELECT * FROM comments")
-    suspend fun getAllComments(): List<Comment>
+    fun getAllComments(): List<Comment>
 
     // Insertar parametro para filtros
     // @Query("SELECT * FROM comments WHERE author = :param1")

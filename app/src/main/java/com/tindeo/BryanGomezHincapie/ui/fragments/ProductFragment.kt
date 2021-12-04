@@ -6,9 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.google.android.material.transition.MaterialContainerTransform
 import com.tindeo.BryanGomezHincapie.R
 import com.tindeo.BryanGomezHincapie.ui.listeners.OnProductListener
 import com.tindeo.BryanGomezHincapie.ui.adaptares.ProductAdapter
@@ -28,7 +30,6 @@ class ProductFragment : Fragment() {
     private lateinit var productManager: StaggeredGridLayoutManager
 
     private val productViewModel: ProductViewModel by sharedViewModel()
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

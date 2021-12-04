@@ -15,6 +15,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
 import com.tindeo.BryanGomezHincapie.R
 import com.tindeo.BryanGomezHincapie.databinding.FragmentProfileBinding
 import com.tindeo.BryanGomezHincapie.ui.activities.MainActivity
@@ -44,6 +45,7 @@ class ProfileFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         loginViewModel.loggedIn()
+        observeViewModels()
         checkPermission()
         events()
     }
@@ -70,6 +72,9 @@ class ProfileFragment : Fragment() {
         loginViewModel.user.observe(viewLifecycleOwner, Observer{ user ->
             if(user != null){
                 binding.profileName.text = user!!.displayName
+                if(user!!.photoUrl!= null){
+                    Glide.with(binding.root).load(user.photoUrl).into(binding.profileImage)
+                }
             }else{
                 val intent = Intent(requireContext(), MainActivity::class.java)
                 startActivity(intent)
@@ -88,7 +93,8 @@ class ProfileFragment : Fragment() {
             if (requestCode == REQUEST_IMAGE){
                 //Convertir la imagen
                 val bitmap = data?.extras?.get("data") as Bitmap
-                binding.profileImage.setImageBitmap(bitmap)
+                // binding.profileImage.setImageBitmap(bitmap)
+                loginViewModel.uploadImage(bitmap)
             }
         }
     }

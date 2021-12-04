@@ -23,7 +23,7 @@ class CommentAdapter(var items: List<Comment>): RecyclerView.Adapter<CommentAdap
         holder.item.commentDescription.text = item.description
         holder.item.commentLike.text = item.like.toString()
         holder.item.commentDislike.text = item.unlike.toString()
-        holder.item.ratingBarComment.rating = item.rating.toFloat()
+        holder.item.ratingBarComment.rating = item.rating!!.toFloat()
 
 
     }

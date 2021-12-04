@@ -13,5 +13,7 @@ data class StoreInfo (
     var description: String?,
     var lat: Double? = null,
     var lng: Double? = null,
-    var match: Int?
-    )
+    var match: Int? = null,
+    ){
+    constructor(): this("","","","","")
+}
