@@ -72,6 +72,7 @@ class ProfileFragment : Fragment() {
         loginViewModel.user.observe(viewLifecycleOwner, Observer{ user ->
             if(user != null){
                 binding.profileName.text = user!!.displayName
+                binding.profileEmail.text  = user!!.email
                 if(user!!.photoUrl!= null){
                     Glide.with(binding.root).load(user.photoUrl).into(binding.profileImage)
                 }
