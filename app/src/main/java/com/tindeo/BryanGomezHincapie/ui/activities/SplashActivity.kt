@@ -85,11 +85,6 @@ class SplashActivity : AppCompatActivity() {
                     }
                     finish()
                 })
-
-                //intension explicita
-                val intent = Intent(applicationContext, MainActivity::class.java)
-                startActivity(intent)
-                finish()
             }
 
             override fun onAnimationCancel(animation: Animator?) {

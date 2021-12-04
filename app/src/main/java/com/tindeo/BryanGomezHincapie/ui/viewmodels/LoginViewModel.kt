@@ -38,13 +38,13 @@ class LoginViewModel(private val repo: UserRepository): ViewModel() {
 
     fun logOut(){
         viewModelScope.launch {
-            _user.postValue((repo.logOut()))
+            _user.postValue(repo.logOut())
         }
     }
 
     fun loggedIn(){
         viewModelScope.launch {
-            _user.postValue((repo.loggedIn()))
+            _user.postValue(repo.loggedIn())
         }
     }
 
