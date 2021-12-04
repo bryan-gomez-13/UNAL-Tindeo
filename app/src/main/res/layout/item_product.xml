@@ -8,8 +8,9 @@
     app:shapeAppearanceOverlay="@style/roundedCard"
     android:layout_marginStart="@dimen/smallMargin"
     android:layout_marginEnd="@dimen/smallMargin"
-    android:layout_marginBottom="@dimen/default_margin"
+
     app:cardElevation="@dimen/card_elevation"
+    android:layout_marginTop="@dimen/default_margin"
     >
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
