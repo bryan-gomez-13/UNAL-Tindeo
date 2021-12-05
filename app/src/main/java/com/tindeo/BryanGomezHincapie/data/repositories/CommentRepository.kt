@@ -18,13 +18,11 @@ class CommentRepository(private val dataSource:CommentMock,
     private val db: CollectionReference = dataSourceFirebase.collection(Constants.COMMENT_COLLECTION)
 
     suspend fun loadComments(): List<Comment> {
-        //Mock
-        //return dataSource.loadComments()
-
-        //Room - SQl lite
-       /* return withContext(Dispatchers.IO) {
-            dataSourceDb.getAllComments()
-        }*/
+//        Mock
+//        return dataSource.loadComments()
+//
+//        Room - SQl lite
+//        return withContext(Dispatchers.IO) {dataSourceDb.getAllComments()}
         val snapshot = db.get().await()
         return snapshot.toObjects(Comment::class.java)
     }

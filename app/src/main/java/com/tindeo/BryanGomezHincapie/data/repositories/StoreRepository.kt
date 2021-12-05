@@ -16,16 +16,15 @@ class StoreRepository(private val dataSource: StoreInfoMock, private val dataSou
 
     // fucn asyc (suspend), cargar info
     suspend fun loadInfo(): StoreInfo? {
-        // llamada desde firebase o API
-        // se retorna la info
-        // Llamar al datasource y devuelve la info
-        // El repo vera como da la infor dependiendo de donde se pida
-        //return dataSource.loadInfo()
-
-
-        /*return withContext(Dispatchers.IO) {
-            dataSourceDb.getStore()
-        }*/
+//         llamada desde firebase o API
+//         se retorna la info
+//         Llamar al datasource y devuelve la info
+//         El repo vera como da la infor dependiendo de donde se pida
+//        return dataSource.loadInfo()
+//
+//        return withContext(Dispatchers.IO) {
+//            dataSourceDb.getStore()
+//        }
         val snapshot = db.get().await()
         return snapshot.toObjects(StoreInfo::class.java)[0]
     }

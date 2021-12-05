@@ -25,6 +25,7 @@ class UserRepository(
                 displayName = name
             }
             user!!.updateProfile(profileUpdate).await()
+            //user.uid --> Unit identificator   Collection firestore
             return user
         } catch (e: FirebaseAuthUserCollisionException) {
             throw Error("Correo electronico en uso")
@@ -48,16 +49,23 @@ class UserRepository(
     }
 
     suspend fun uploadImage(bitmap: Bitmap): FirebaseUser? {
+        //El bite convertirlo en un arreglo de bytes
         val baos = ByteArrayOutputStream()
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)      //Compresion de la clase con el mismo tamaño
+        //Traer el arreglo de bytes
         val data = baos.toByteArray()
+        //Usuario logueado
         val user = dataSource.currentUser
+        //Referencia de la imagen en el storage con el ID personalizado -- En el storage de firebase se sube esta imagen
         val profileRef = dataSourceStorage.child("${user!!.uid}.jpg")
-        profileRef.putBytes(data).await()
+        profileRef.putBytes(data).await()                                  //Bytes en data
+        //alamcenamos el uri de la imagen
         var uri = profileRef.downloadUrl.await()
+        //Referencia de la imagen
         val profileUpdate = userProfileChangeRequest {
             photoUri = uri
         }
+        //Actulizar la imagen en el perfil del usuario
         user!!.updateProfile(profileUpdate).await()
         return user
     }

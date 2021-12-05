@@ -10,7 +10,9 @@ import com.tindeo.BryanGomezHincapie.data.repositories.UserRepository
 import kotlinx.coroutines.launch
 
 class LoginViewModel(private val repo: UserRepository): ViewModel() {
+    //                                 Devuelve el repo
     private var _user: MutableLiveData<FirebaseUser?> = MutableLiveData()
+    //Getter
     val user: LiveData<FirebaseUser?> get() = _user
 
     private var _error: MutableLiveData<String> = MutableLiveData()

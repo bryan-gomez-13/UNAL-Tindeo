@@ -17,11 +17,11 @@ class ProductRepository(private val dataSource: ProductMock, private val dataSou
     private val db: CollectionReference = dataSourceFirebase.collection(Constants.PRODUCT_COLLECTION)
 
     suspend fun loadProducts(): List<Product> {
-        //return dataSource.loadProduct()
-
-       /* return withContext(Dispatchers.IO) {
-            dataSourceDb.getAllProducts()
-        }*/
+//        return dataSource.loadProduct()
+//
+//       return withContext(Dispatchers.IO) {
+//            dataSourceDb.getAllProducts()
+//        }
 
         val snapshot = db.get().await()
         return snapshot.toObjects(Product::class.java)

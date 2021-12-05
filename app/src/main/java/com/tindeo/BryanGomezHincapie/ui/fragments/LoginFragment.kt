@@ -54,8 +54,6 @@ class LoginFragment : Fragment() {
                 binding.loginPasswordLayout.error = null
             }
 
-
-
             if(isValid){
                 loginViewModel.login(binding.loginEmail.text.toString(),binding.loginPassword.text.toString())
             }
