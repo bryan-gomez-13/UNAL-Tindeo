@@ -41,7 +41,7 @@ class AccountOptionsFragment : Fragment() {
         }
         binding.singUpButton.setOnClickListener{
             if(binding.CliPassTextInput.text.toString() == binding.CliConfirmpassTextInput.text.toString() ){
-                loginViewModel.singUp(binding.CliCorreoTextInput.text.toString(),binding.CliNombreTextInput.text.toString(),binding.CliPassTextInput.text.toString())
+                loginViewModel.singUp(binding.CliCorreoTextInput.text.toString(),binding.CliNombreTextInput.text.toString(),binding.CliPassTextInput.text.toString(),binding.CliApellidoTextInput.text.toString(),binding.CliCelularTextInput.text.toString())
             }else{
                 Toast.makeText(requireContext(),"Las contraseñas no son identicas", Toast.LENGTH_LONG).show()
             }

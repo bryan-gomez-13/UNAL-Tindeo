@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.firebase.auth.FirebaseUser
+import com.tindeo.BryanGomezHincapie.data.models.StoreInfo
 import com.tindeo.BryanGomezHincapie.data.repositories.UserRepository
 import kotlinx.coroutines.launch
 
@@ -18,10 +19,10 @@ class LoginViewModel(private val repo: UserRepository): ViewModel() {
     private var _error: MutableLiveData<String> = MutableLiveData()
     val error: LiveData<String> get() = _error
 
-    fun singUp(email:String, name:String, password:String){
+    fun singUp(email:String, name:String, password:String, apellidos:String, celular:String){
         viewModelScope.launch {
             try {
-                _user.postValue(repo.signUp(email,name,password))
+                _user.postValue(repo.signUp(email,name,password,apellidos,celular))
             }catch (e: Error){
                 _error.postValue(e.message)
             }

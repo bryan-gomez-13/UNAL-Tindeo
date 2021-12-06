@@ -3,21 +3,26 @@ package com.tindeo.BryanGomezHincapie.data.repositories
 import android.graphics.Bitmap
 import com.google.firebase.auth.*
 import com.google.firebase.auth.ktx.userProfileChangeRequest
+import com.google.firebase.firestore.CollectionReference
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.StorageReference
+import com.tindeo.BryanGomezHincapie.data.models.StoreInfo
+import com.tindeo.BryanGomezHincapie.utils.Constants
 import kotlinx.coroutines.tasks.await
 import java.io.ByteArrayOutputStream
 import java.lang.Error
 
 class UserRepository(
     private val dataSource: FirebaseAuth,
-    private val dataSourceStorage: StorageReference
+    private val dataSourceStorage: StorageReference,
+    private val dataFireStore: FirebaseFirestore
 ) {
 
     suspend fun  loggedIn(): FirebaseUser? {
         return dataSource.currentUser
     }
 
-    suspend fun signUp(email: String, name: String, password: String): FirebaseUser? {
+    suspend fun signUp(email: String, name: String, password: String, apellidos: String, celular:String): FirebaseUser? {
         try {
             dataSource.createUserWithEmailAndPassword(email, password).await()
             val user = dataSource.currentUser
@@ -25,6 +30,13 @@ class UserRepository(
                 displayName = name
             }
             user!!.updateProfile(profileUpdate).await()
+            dataFireStore.collection(Constants.USERS_COLLECTION).document(user!!.uid).set(
+                hashMapOf(  "id" to user.uid,
+                            "nombre" to name,
+                            "apellidos" to apellidos,
+                           "celular" to celular
+                    )
+            )
             //user.uid --> Unit identificator   Collection firestore
             return user
         } catch (e: FirebaseAuthUserCollisionException) {
