@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.tindeo.BryanGomezHincapie.R
 import com.tindeo.BryanGomezHincapie.ui.adaptares.CommentAdapter
 import com.tindeo.BryanGomezHincapie.data.models.Comment
 import com.tindeo.BryanGomezHincapie.databinding.FragmentCommentBinding
@@ -45,6 +47,7 @@ class CommentFragment : Fragment() {
             layoutManager = commentManager
         }
         observeViewModel()
+        events()
     }
 
     //Si hay nueva informacion la pintan
@@ -54,4 +57,9 @@ class CommentFragment : Fragment() {
         })
     }
 
+    private fun events(){
+        binding.commentAddComment.setOnClickListener {
+            findNavController().navigate(R.id.action_commentFragment_to_addCommentFragment)
+        }
+    }
 }

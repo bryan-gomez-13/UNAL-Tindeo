@@ -28,10 +28,19 @@
         android:id="@+id/commentFragment"
         android:name="com.tindeo.BryanGomezHincapie.ui.fragments.CommentFragment"
         android:label="@string/comment_title"
-        tools:layout="@layout/fragment_comment" />
+        tools:layout="@layout/fragment_comment" >
+        <action
+            android:id="@+id/action_commentFragment_to_addCommentFragment"
+            app:destination="@id/addCommentFragment" />
+    </fragment>
     <fragment
         android:id="@+id/productDetailFragment"
         android:name="com.tindeo.BryanGomezHincapie.ui.fragments.ProductDetailFragment"
         android:label="@string/product_detail_title"
         tools:layout="@layout/fragment_product_detail" />
+    <fragment
+        android:id="@+id/addCommentFragment"
+        android:name="com.tindeo.BryanGomezHincapie.ui.fragments.AddCommentFragment"
+        android:label="@string/add_comment_title"
+        tools:layout="@layout/fragment_add_comment" />
 </navigation>

@@ -15,7 +15,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginHorizontal="32dp"
-
         >
 
         <TextView
@@ -229,13 +228,29 @@
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/comment_addComment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/small_margin"
+        android:layout_marginHorizontal="@dimen/small_margin"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutProgressBar"
+        app:layout_constraintBottom_toTopOf="@id/comment_recycler"
+        android:text="@string/Add_Comment"
+        app:startIconDrawable="@drawable/ic_comment_24"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        >
+    </Button>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/comment_recycler"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layoutProgressBar"
+        app:layout_constraintTop_toBottomOf="@id/comment_addComment"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         tools:listitem="@layout/item_comment"

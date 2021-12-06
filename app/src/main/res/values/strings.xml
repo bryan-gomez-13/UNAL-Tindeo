@@ -25,6 +25,7 @@
     <string name="comment_title">Opiniones de mi tienda</string>
     <string name="profile_title">Mi perfil</string>
     <string name="product_detail_title">Detalle del producto</string>
+    <string name="add_comment_title">Agregar comentario</string>
 
     <string name="menu_tienda_label">Mi tienda</string>
     <string name="menu_productos_label">Productos</string>
@@ -50,4 +51,7 @@
     <string name="product_aumentar_producto">aumentar producto</string>
     <string name="logOut">Cerrar Sesión</string>
     <string name="default_quantity">1</string>
+    <string name="Add_Comment">Agregar comentario</string>
+    <string name="titulo">Titulo</string>
+    <string name="agregar_comentario">Agregar comentario</string>
 </resources>

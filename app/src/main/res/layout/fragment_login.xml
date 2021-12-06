@@ -57,7 +57,6 @@
         android:layout_height="wrap_content"
         android:hint="@string/login_text_field_email"
         app:startIconDrawable="@drawable/ic_email_24"
-
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         >
 
