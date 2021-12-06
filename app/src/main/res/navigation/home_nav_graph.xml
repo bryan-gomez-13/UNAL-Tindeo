@@ -42,5 +42,9 @@
         android:id="@+id/addCommentFragment"
         android:name="com.tindeo.BryanGomezHincapie.ui.fragments.AddCommentFragment"
         android:label="@string/add_comment_title"
-        tools:layout="@layout/fragment_add_comment" />
+        tools:layout="@layout/fragment_add_comment" >
+        <action
+            android:id="@+id/action_addCommentFragment_to_commentFragment"
+            app:destination="@id/commentFragment" />
+    </fragment>
 </navigation>

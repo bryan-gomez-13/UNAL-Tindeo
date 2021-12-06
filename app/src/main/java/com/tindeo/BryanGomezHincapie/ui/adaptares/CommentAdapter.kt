@@ -8,7 +8,7 @@ import com.tindeo.BryanGomezHincapie.databinding.ItemCommentBinding
 
 //Adapter par monstar la info
 class CommentAdapter(var items: List<Comment>): RecyclerView.Adapter<CommentAdapter.ViewHolder>() {
-    class ViewHolder(var item: ItemCommentBinding): RecyclerView.ViewHolder(item.root)
+    class ViewHolder(val item: ItemCommentBinding): RecyclerView.ViewHolder(item.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
@@ -24,8 +24,6 @@ class CommentAdapter(var items: List<Comment>): RecyclerView.Adapter<CommentAdap
         holder.item.commentLike.text = item.like.toString()
         holder.item.commentDislike.text = item.unlike.toString()
         holder.item.ratingBarComment.rating = item.rating!!.toFloat()
-
-
     }
 
     override fun getItemCount(): Int {

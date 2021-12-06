@@ -28,11 +28,11 @@ class ProductRepository(private val dataSource: ProductMock, private val dataSou
     }
 
     suspend fun insertProducts(products: List<Product>) {
-        withContext(Dispatchers.IO) {
-            val temp = dataSourceDb.getAllProducts()
-            if (temp.isEmpty()) {
-                dataSourceDb.insertProducts(products)
-            }
-        }
+//        withContext(Dispatchers.IO) {
+//            val temp = dataSourceDb.getAllProducts()
+//            if (temp.isEmpty()) {
+//                dataSourceDb.insertProducts(products)
+//            }
+//        }
     }
 }

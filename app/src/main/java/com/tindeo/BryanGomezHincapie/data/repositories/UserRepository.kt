@@ -34,7 +34,7 @@ class UserRepository(
                 hashMapOf(  "id" to user.uid,
                             "nombre" to name,
                             "apellidos" to apellidos,
-                           "celular" to celular
+                            "celular" to celular
                     )
             )
             //user.uid --> Unit identificator   Collection firestore

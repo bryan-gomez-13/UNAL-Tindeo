@@ -30,11 +30,11 @@ class StoreRepository(private val dataSource: StoreInfoMock, private val dataSou
     }
 
     suspend fun insertStore(store: StoreInfo) {
-        withContext(Dispatchers.IO) {
-            val temp = dataSourceDb.getStore()
-            if (temp == null) {
-                dataSourceDb.insertStore(store)
-            }
-        }
+//        withContext(Dispatchers.IO) {
+//            val temp = dataSourceDb.getStore()
+//            if (temp == null) {
+//                dataSourceDb.insertStore(store)
+//            }
+//        }
     }
 }
