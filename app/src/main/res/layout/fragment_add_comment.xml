@@ -84,32 +84,13 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/addComment_id_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/addComment_calificacion_layout"
-            android:layout_marginVertical="@dimen/small_margin"
-            android:layout_marginHorizontal="@dimen/small_margin"
-            android:hint="id"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            >
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/addComment_id_input"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number">
-            </com.google.android.material.textfield.TextInputEditText>
-
-        </com.google.android.material.textfield.TextInputLayout>
-
         <Button
             android:id="@+id/button_addComment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/small_margin"
             android:text="@string/agregar_comentario"
-            app:layout_constraintTop_toBottomOf="@+id/addComment_id_layout"
+            app:layout_constraintTop_toBottomOf="@+id/addComment_calificacion_layout"
             app:layout_constraintStart_toStartOf="@+id/addComment_tindeo"
             app:layout_constraintEnd_toEndOf="@+id/addComment_tindeo"
             >

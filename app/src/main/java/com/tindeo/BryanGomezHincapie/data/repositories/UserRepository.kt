@@ -36,7 +36,7 @@ class UserRepository(
                             "apellidos" to apellidos,
                             "celular" to celular
                     )
-            )
+            ).await()
             //user.uid --> Unit identificator   Collection firestore
             return user
         } catch (e: FirebaseAuthUserCollisionException) {

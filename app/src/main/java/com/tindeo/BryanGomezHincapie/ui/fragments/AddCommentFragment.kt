@@ -12,6 +12,8 @@ import com.tindeo.BryanGomezHincapie.R
 import com.tindeo.BryanGomezHincapie.databinding.FragmentAddCommentBinding
 import com.tindeo.BryanGomezHincapie.ui.viewmodels.CommentViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import java.text.DateFormat
+import java.text.SimpleDateFormat
 import java.util.*
 
 
@@ -43,12 +45,21 @@ class AddCommentFragment : Fragment() {
 
     private fun events(){
         binding.buttonAddComment.setOnClickListener {
+            //System.currentTimeMillis()
+            //Date
 
-            commentViewModel.addComment(binding.addCommentIdInput.text.toString(),
+            val date = Calendar.getInstance().time
+            val dateFormat: DateFormat = SimpleDateFormat("yyyy-MM-dd hh:mm:ss")
+            val dateFormat2: DateFormat = SimpleDateFormat("yyyy-MM-dd")
+            val strDate: String = dateFormat.format(date)
+            val strDate2: String = dateFormat2.format(date)
+
+            commentViewModel.addComment(
+                strDate,
                 null,
                 binding.addCommentTitleInput.text.toString(),
                 binding.addCommentDescriptionInput.text.toString(),
-                "27-11-2021",
+                strDate2,
                 null,
                 0,
                 0,
