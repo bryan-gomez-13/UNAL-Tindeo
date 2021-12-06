@@ -18,6 +18,6 @@ interface CommentDao {
     fun getAllComments(): List<Comment>
 
      //Insertar parametro para filtros
-     @Query("SELECT * FROM comments WHERE author = :param1")
-     suspend fun getAllComments(param1: String): List<Comment>
+//     @Query("SELECT * FROM comments WHERE author = :param1")
+//     suspend fun getAllComments(param1: String): List<Comment>
 }

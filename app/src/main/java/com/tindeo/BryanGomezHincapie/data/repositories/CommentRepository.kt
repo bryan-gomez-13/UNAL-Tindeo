@@ -28,12 +28,11 @@ class CommentRepository(private val dataSource:CommentMock,
     }
 
     suspend fun insertComments(comments: List<Comment>) {
-//        withContext(Dispatchers.IO) {
-//            val temp = dataSourceDb.getAllComments()
-//            if (temp.isEmpty()) {
-//                dataSourceDb.insertComments(comments)
-//            }
-//        }
-
+        withContext(Dispatchers.IO) {
+            val temp = dataSourceDb.getAllComments()
+            if (temp.isEmpty()) {
+                dataSourceDb.insertComments(comments)
+            }
+        }
     }
 }
