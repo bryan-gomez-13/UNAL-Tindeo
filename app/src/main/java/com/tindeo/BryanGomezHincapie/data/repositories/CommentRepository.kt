@@ -41,7 +41,7 @@ class CommentRepository(private val dataSource:CommentMock,
 //        }
     }
 
-    suspend fun addComments(id:String, title:String, description:String, data:String, like: Int, unlike:Int, rating:String){
+    suspend fun addComments(id:String, title:String, description:String, data:String, like: Int, unlike:Int, rating:Float){
         dataSourceFirebase.collection(Constants.COMMENT_COLLECTION).document().set(
             hashMapOf(
                 "data" to data,

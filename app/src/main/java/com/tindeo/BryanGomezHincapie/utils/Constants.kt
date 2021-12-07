@@ -6,5 +6,6 @@ class Constants {
         val PRODUCT_COLLECTION = "products"
         val STORE_COLLECTION = "stores"
         val USERS_COLLECTION = "users"
+        val COMMENT_LIKES_COLLECTION = "commentLiskes"
     }
 }

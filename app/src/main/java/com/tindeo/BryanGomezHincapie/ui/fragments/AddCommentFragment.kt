@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.tindeo.BryanGomezHincapie.R
 import com.tindeo.BryanGomezHincapie.databinding.FragmentAddCommentBinding
 import com.tindeo.BryanGomezHincapie.ui.viewmodels.CommentViewModel
+import com.tindeo.BryanGomezHincapie.ui.viewmodels.LoginViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.text.DateFormat
 import java.text.SimpleDateFormat
@@ -23,6 +24,7 @@ class AddCommentFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val commentViewModel: CommentViewModel by viewModel()
+    private val loginViewModel: LoginViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,6 +42,7 @@ class AddCommentFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
+        loginViewModel.loggedIn()
         events()
     }
 
@@ -54,8 +57,11 @@ class AddCommentFragment : Fragment() {
             val strDate: String = dateFormat.format(date)
             val strDate2: String = dateFormat2.format(date)
 
+            val  uid = loginViewModel.user.value
+
+
             commentViewModel.addComment(
-                strDate,
+                uid!!.uid,
                 null,
                 binding.addCommentTitleInput.text.toString(),
                 binding.addCommentDescriptionInput.text.toString(),
@@ -63,7 +69,7 @@ class AddCommentFragment : Fragment() {
                 null,
                 0,
                 0,
-                binding.addCommentCalificacionInput.text.toString())
+                binding.ratingBarAddComment.rating)
             Toast.makeText(requireContext(),"Comentario creado", Toast.LENGTH_LONG).show()
             findNavController().navigate(R.id.action_addCommentFragment_to_commentFragment)
         }

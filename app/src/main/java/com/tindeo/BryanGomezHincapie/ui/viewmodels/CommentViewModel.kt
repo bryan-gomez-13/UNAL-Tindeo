@@ -26,7 +26,7 @@ class CommentViewModel(private val repo: CommentRepository): ViewModel() {
         }
     }
 
-    fun addComment(id:String, author:String?, title:String, description:String, data:String, image:String?, like: Int, unlike: Int, rating: String){
+    fun addComment(id:String, author:String?, title:String, description:String, data:String, image:String?, like: Int, unlike: Int, rating: Float){
         viewModelScope.launch {
             try {
                 //_comment.postValue(repo.addComments(id,title,description,data,like,unlike,rating))
