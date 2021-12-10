@@ -15,5 +15,5 @@ data class StoreInfo (
     var lng: Double? = null,
     var match: Int? = null,
     ){
-    constructor(): this("","","","","")
+    constructor(): this("","","","","", null, null, null)
 }
